@@ -1,0 +1,157 @@
+:root{
+  --gradient:linear-gradient(180deg,blue 0%,rgb(42, 196, 220,0.1)100%);
+  --dark:black;
+}
+*{
+ margin: 0;
+ padding: 0;
+}
+
+
+body{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: var(--gradient);
+  justify-content: space-around;
+ 
+}
+.btn{
+  background-color: rgba(29, 149, 254, 0.59);
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  position: absolute;
+    right: 4px;
+  bottom: 5px;
+}
+
+/* scetion */
+
+.todo{
+  background-color: #c5c5f88a;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 60px;
+  border: none;
+  border-radius: 24px;
+  width: 40%;
+  max-width: 300px;
+  height: 60%;
+}
+
+h1{
+text-align: center;
+text-transform: uppercase;
+height: 20px;
+}
+
+.input{
+  display: flex;
+  position: relative;
+}
+
+.input-field{
+  width: 100%;
+  padding: 15px; 
+  font-size:1rem;
+  border-radius: 8px;
+  border:1px solid gainsboro
+}
+
+input[type="text"]::placeholder{
+color:gray;
+gap: 5px;
+}
+
+ul{
+  overflow-y: scroll;
+}
+
+li{
+  padding: 10px;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#todo-list p{
+color: aquamarine;
+}
+
+.disabled{
+  display: flex;
+  text-decoration: line-through;
+}
+
+input[type="checkbox"]::before{
+  content: "\2713";
+  display: inline-block;
+  color: transparent;
+  border: 2px solid blue;
+  text-align: center;
+  width: 2px;
+  height: 2px;
+  font-size: 3px;
+  border-radius: 50%;
+}
+
+input[type="checkbox"]::before::after{
+  content: "\2713";
+  display: inline-block;
+  color: transparent;
+  border: 2px solid blue;
+  text-align: center;
+  width: 2px;
+  height: 2px;
+  font-size: 3px;
+  border-radius: 50%;
+}
+
+input[type="checkbox"]:checked::before {
+  color: whitesmoke;
+  background-color: green;
+  border: 0.06rem solid greenyellow;
+  border-radius: 50%;
+}
+
+.counter {
+  border: 0.06rem solid gainsboro;
+}
+
+.counter-container {
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  color: gainsboro;
+}
+
+.counter-container p {
+  align-self: center;
+}
+
+.counter-container button {
+  border: none;
+  background-color: transparent;
+  color: gray;
+  font-size: 1rem;
+}
+
+footer {
+  display: flex;
+  gap: 1.8rem;
+  background-color: rgb(253, 253, 253);
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+}
+
+.scroll {
+  height: 15rem;
+  scrollbar-width: thin;
+}
+
+

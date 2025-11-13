@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>todo</title>
+  </head>
+  <body>
+    <section class="todo">
+      <h1>ToDO</h1>
+      <div class="input">
+        <input
+          id="input_filed"
+          class="input-field"
+          type="text"
+          placeholder="add text"
+        />
+        <button class="btn">add</button>
+      </div>
+
+      <ul class="list-item">
+        <li id="todo-list"></li>
+      </ul>
+
+      <div>
+        <hr class="counter" />
+
+        <div class="counter-container">
+          <p><span id="todo-count">0</span> items total</p>
+          <button id="delete-button">Delete All</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>done by aniket</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

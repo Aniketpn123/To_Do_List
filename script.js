@@ -1,50 +1,53 @@
-const btn = document.querySelector('.btn');
-const inputFiled = document.querySelector('.input-field');
-const listItem = document.querySelector('.list-item');
-const deleteButton=document.getElementById('delete-button');
+const input = document.querySelector('.input-field');
+const btn = document.querySelector('.input-btn');
+const list = document.querySelector('.list-item');
+const delBtn = document.querySelector('.all-delete');
+const totalTask= document.querySelector('.total');
 
-let todo =['aniket'];
+let todo = JSON.parse(localStorage.getItem('todo')) || [];
 
-// add btn
+displayTask();
 
-btn.addEventListener('click', () => {
-  addItem();
+document.addEventListener('DOMContentLoaded', () => {
+  btn.addEventListener('click', () => {
+    addTask();
+  });
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      addTask();
+    }
+  });
+  delBtn.addEventListener('click', () => {
+    todo = [];
+    store();
+    displayTask();
+  });
 });
 
-inputFiled.addEventListener('keydown',(e)=>{
-  if(e.key === 'Enter')
-  {
-    addItem();
-  }
-})
-
-// delete alll btn
-
-deleteButton.addEventListener('click',()=>{
-   delItem();
-})
-
-// function
-
-function addItem() {
-  let task = inputFiled.value;
+function addTask() {
+  task = input.value;
   if (task !== '') {
     todo.push(task);
+    displayTask();
+    store();
+    input.value = '';
   }
-  display();
-  inputFiled.value = '';
 }
 
-function display() {
-  listItem.innerHTML="";
+function displayTask() {
+  list.innerHTML = '';
   todo.forEach((item, index) => {
-    let li = document.createElement('li');
-    li.id = 'todo-list';
-    li.innerHTML = `<p><input type="checkbox">${item}</p>`;
-    listItem.appendChild(li);
+    list.innerHTML += `<li class="item">
+        <p class="item-desc"><input type="checkbox" name="" ><span></span>${item}</p>
+      </li>`;
   });
+  total();
 }
-function delItem(){
-     todo= [];
-     display();
+
+function store(){
+  localStorage.setItem('todo',JSON.stringify(todo));
+}
+
+function total(){
+  totalTask.innerHTML=`<p><span>${todo.length}</span>Tasks</p>`;
 }

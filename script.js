@@ -3,6 +3,7 @@ const btn = document.querySelector('.input-btn');
 const list = document.querySelector('.list-item');
 const delBtn = document.querySelector('.all-delete');
 const totalTask= document.querySelector('.total');
+const p=document.querySelectorAll('.item-desc');
 
 let todo = JSON.parse(localStorage.getItem('todo')) || [];
 
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store();
     displayTask();
   });
+ 
 });
 
 function addTask() {
@@ -38,8 +40,8 @@ function displayTask() {
   list.innerHTML = '';
   todo.forEach((item, index) => {
     list.innerHTML += `<li class="item">
-        <p class="item-desc"><input type="checkbox" name="" ><span></span>${item}</p>
-      </li>`;
+        <p class="item-desc"><input type="checkbox" name="" ><span>${item}</span></p>
+      </li>`;  
   });
   total();
 }

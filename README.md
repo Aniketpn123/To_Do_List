@@ -1,32 +1,33 @@
-A simple and clean Todo List application built using HTML, CSS, and JavaScript.
-You can add tasks, delete tasks, and store them in localStorage, so your tasks stay even after refresh.
+#  Todo App
 
-*Features
+A simple and clean Todo List application built using **HTML, CSS, and JavaScript**.  
+You can add tasks, delete tasks, and your tasks are saved using **localStorage**, so they remain even after refreshing the page.
 
-Add new tasks
+---
 
-Delete tasks
+##  Features
+-  Add new tasks  
+-  Delete individual tasks  
+-  Clear all tasks  
+-  localStorage support (data persists)  
+-  Responsive and clean UI  
 
-Delete all tasks
+---
 
-Tasks saved in localStorage
+##  Tech Stack
+- **HTML5**
+- **CSS3**
+- **JavaScript (ES6)**
 
-Clean and responsive UI
+---
 
-*Tech Used
+##  What I Learned
+- DOM manipulation  
+- Event listeners  
+- Working with arrays  
+- Using `localStorage` with `JSON.stringify()` and `JSON.parse()`  
+- Dynamically updating UI elements  
 
-HTML
+---
 
-CSS
-
-JavaScript# To_Do_List
-
-DOM manipulation
-
-Event listeners
-
-Working with arrays
-
-Using localStorage (JSON.stringify & JSON.parse)
-
-Updating UI dynamically
+##  Project Structure

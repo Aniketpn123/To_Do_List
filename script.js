@@ -1,9 +1,10 @@
 const input = document.querySelector('.input-field');
 const btn = document.querySelector('.input-btn');
 const list = document.querySelector('.list-item');
-const delBtn = document.querySelector('.all-delete');
-const totalTask= document.querySelector('.total');
-const p=document.querySelectorAll('.item-desc');
+const alldelBtn = document.querySelector('.all-delete');
+const totalTask = document.querySelector('.total');
+const p = document.querySelectorAll('.item-desc');
+const itemBtn = document.querySelector('.item-btn');
 
 let todo = JSON.parse(localStorage.getItem('todo')) || [];
 
@@ -18,12 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
       addTask();
     }
   });
-  delBtn.addEventListener('click', () => {
+  alldelBtn.addEventListener('click', () => {
     todo = [];
     store();
     displayTask();
   });
- 
 });
 
 function addTask() {
@@ -40,16 +40,32 @@ function displayTask() {
   list.innerHTML = '';
   todo.forEach((item, index) => {
     list.innerHTML += `<li class="item">
-        <p class="item-desc"><input type="checkbox" name="" ><span>${item}</span></p>
-      </li>`;  
+        <p class="item-desc">
+
+        <input type="checkbox" name="" >
+
+        <span>${item}</span>
+
+        <button class="item-btn"
+        onclick="deleteBtn(${index})">
+        <i class="fa-solid fa-x"></i>
+        </button>
+
+        </p>
+      </li>`;
   });
   total();
 }
 
-function store(){
-  localStorage.setItem('todo',JSON.stringify(todo));
+function store() {
+  localStorage.setItem('todo', JSON.stringify(todo));
 }
 
-function total(){
-  totalTask.innerHTML=`<p><span>${todo.length}</span>Tasks</p>`;
+function total() {
+  totalTask.innerHTML = `<p><span>${todo.length}</span>Tasks</p>`;
+}
+
+function deleteBtn(index) {
+  todo.pop(index);
+  displayTask();
 }

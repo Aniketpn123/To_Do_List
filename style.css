@@ -71,7 +71,6 @@ body{
 }
 
 .item{
-
 }
 
 .item-desc{
@@ -83,6 +82,9 @@ body{
   padding: 10px 20px;
   border-radius: 6px;
   cursor: pointer;
+  margin: 0px 20px;
+  justify-content: space-around;
+  border: 2px solid red;
 }
 
 .item-desc input[type="checkbox"]{
@@ -93,7 +95,7 @@ body{
    border-radius: 50%;
    position: relative;
    margin-right: 20px;
-   transition: 0.2s ease;
+   transition: 0.4s ease;
 }
 
 .item-desc input[type="checkbox"]:checked{
@@ -108,7 +110,7 @@ body{
           border-bottom: 2px solid black;
           border-right: 2px solid black;
           right: 4px;
-          transition: 0.5s;
+          transition: 1s;
           transform: rotate(45deg) scale(0);
 }
 
@@ -116,10 +118,16 @@ body{
   transform: rotate(45deg) scale(1);
 }
 
- .item-desc input[type="checkbox"]:checked + span{
+ .item-desc input[type="checkbox"]:checked +span{
   color: rgba(0, 0, 0, 0.479);
   text-decoration: line-through;
   transition: 0.5s;
+}
+
+.item-btn{
+  border: none;
+  align-self: baseline;
+  margin-top: 1px;
 }
 
 

@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function addTask() {
   task = input.value;
   if (task !== '') {
-    todo.push(task);
+    todo.push({name:task,is:false});
     displayTask();
     store();
     input.value = '';
@@ -42,9 +42,11 @@ function displayTask() {
     list.innerHTML += `<li class="item">
         <p class="item-desc">
 
-        <input type="checkbox" name="" >
+        <input type="checkbox" onchange="toggleTask(${index})"
+        ${item.is ? "checked" : "" }
+        >
 
-        <span>${item}</span>
+        <span>${item.name}</span>
 
         <button class="item-btn"
         onclick="deleteBtn(${index})">
@@ -66,6 +68,13 @@ function total() {
 }
 
 function deleteBtn(index) {
-  todo.pop(index);
+  todo.splice(index,1);
+  displayTask();
+}
+
+function toggleTask(index)
+{
+  todo[index].is = !todo[index].is;
+  store();
   displayTask();
 }
